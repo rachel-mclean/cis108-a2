@@ -7,14 +7,25 @@ let scrabbleScore = require('./scrabbleScore');
  * Use your implementation of scrabbleScore.
  */
 function avgScrabbleScore(words) {
-  // This is your job. :)
+  let scores = 0;
+
+  for(let word of words) {
+    // console.log("score of " + word + " is " + scrabbleScore(word));
+    scores += scrabbleScore(word);
+    // console.log("scores is now " + scores);
+  }
+
+  /* -1 is there because the newline at the end of the sample-words.txt file adds an
+  empty element to the array, increasing length by 1 which changes
+  the average*/
+  return scores/(words.length-1);
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for avgScrabbleScore:');
 
-  // Add your own sanity checks here.
-  // How else will you be sure your code does what you think it does?
+  console.log(avgScrabbleScore(['aaa', 'cat', 'dog', '']) === 13/3);
+  console.log(avgScrabbleScore(['aaaa', 'bbbb', 'cccc', 'dddd', 'zzzz', '']) === 76/5);
 }
 
 module.exports = avgScrabbleScore;
