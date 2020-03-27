@@ -21,8 +21,7 @@ if (require.main === module) {
   console.log('Running sanity checks for avgScrabbleScoreFromFile:');
 
   console.log(avgScrabbleScoreFromFile('sample-words.txt'));
-  // Add your own sanity checks here.
-  // How else will you be sure your code does what you think it does?
+  console.log(avgScrabbleScoreFromFile('most-common-words.txt'))
 }
 
 module.exports = avgScrabbleScoreFromFile;
